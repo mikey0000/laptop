@@ -37,13 +37,13 @@ Install
 
 Read, then run the script:
 
-    bash <(curl -s https://raw.githubusercontent.com/thoughtbot/laptop/master/mac)
+    bash <(curl -s https://raw.github.com/lodgem/laptop/master/mac)
 
 ### Linux
 
 Read, then run the script:
 
-    bash <(wget -qO- https://raw.githubusercontent.com/thoughtbot/laptop/master/linux)
+    bash <(wget -qO- https://raw.github.com/lodgem/laptop/master/linux)
 
 What it sets up
 ---------------
@@ -85,35 +85,14 @@ Put your customizations in `~/.laptop.local`. For example, your
     brew cask install google-chrome
     brew cask install rdio
 
-Laptopped linux vagrant boxes
------------------------------------------------------------
+About
+-------
 
-We now publish [vagrant](http://vagrantup.com) boxes for every supported linux
-distro. These boxes have the laptop script applied already and are ready to go.
-Getting started is as easy as creating a Vagrantfile that looks like:
+![Lodgem](http://lodgem.s3.amazonaws.com/tm/logotype.png)
 
-    Vagrant.configure('2') do
-      config.vm.box = 'thoughtbot/ubuntu-14-04-server-with-laptop'
-    end
+Lodgem is small team of passionate who enjoy creating polished applications that solve interesting problems. We consider ourselves as friendly, hard workers and dynamic. We love to see things differently and strongly believe in progress and innovation.
 
-
-```sh
-# And then in the same directory as your Vagrantfile . . .
-vagrant up
-vagrant ssh
-
-```
-
-Laptopped vagrantcloud boxes currently available:
-
-* `thoughtbot/debian-wheezy-64-with-laptop`
-* `thoughtbot/debian-jessie-64-with-laptop`
-* `thoughtbot/ubuntu-14-04-server-with-laptop`
-* `thoughtbot/ubuntu-13-10-server-with-laptop`
-* `thoughtbot/ubuntu-12-04-server-with-laptop`
-
-See our [vagrantcloud profile](https://vagrantcloud.com/thoughtbot). You must
-have vagrant >= 1.5.0 to use vagrantcloud images directly.
+At Lodgem, we use open source software a lot and that's why we try hard to share as much as possible.
 
 Credits
 -------
@@ -123,12 +102,12 @@ Credits
 Laptop is maintained and funded by [thoughtbot, inc](http://thoughtbot.com/community).
 The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 
-Thank you, [contributors](https://github.com/thoughtbot/laptop/graphs/contributors)!
+Thank you, [contributors](https://github.com/lodgem/laptop/graphs/contributors)!
 
 Contributing
 ------------
 
-Please see [CONTRIBUTING.md](https://github.com/thoughtbot/laptop/blob/master/CONTRIBUTING.md).
+Please see [CONTRIBUTING.md](https://github.com/lodgem/laptop/blob/master/CONTRIBUTING.md).
 
 License
 -------
