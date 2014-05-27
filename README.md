@@ -37,13 +37,13 @@ Install
 
 Read, then run the script:
 
-    bash <(curl -s https://raw.githubusercontent.com/lodgem/laptop/master/mac)
+    bash <(curl -s https://raw.githubusercontent.com/lodgem/laptop/fork/mac)
 
 ### Linux
 
 Read, then run the script:
 
-    bash <(wget -qO- https://raw.githubusercontent.com/lodgem/laptop/master/linux)
+    bash <(wget -qO- https://raw.githubusercontent.com/lodgem/laptop/fork/linux)
 
 What it sets up
 ---------------
