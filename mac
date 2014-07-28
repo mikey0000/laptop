@@ -17,12 +17,12 @@ if [[ ! -d "$HOME/.bin/" ]]; then
   mkdir "$HOME/.bin"
 fi
 
-if [ ! -f "$HOME/.zshrc" ]; then
-  touch $HOME/.zshrc
+if [ ! -f "$HOME/.bash_profile" ]; then
+  touch $HOME/.bash_profile
 fi
 
 if [[ ":$PATH:" != *":$HOME/.bin:"* ]]; then
-  printf 'export PATH="$HOME/.bin:$PATH"\n' >> ~/.zshrc
+  printf 'export PATH="$HOME/.bin:$PATH"\n' >> ~/.bash_profile
   export PATH="$HOME/.bin:$PATH"
 fi
 ### end common-components/check-home-bin
@@ -32,24 +32,24 @@ fancy_echo() {
 }
 ### end common-components/shared-functions
 
-fancy_echo "Changing your shell to zsh ..."
-  chsh -s $(which zsh)
+#fancy_echo "Changing your shell to zsh ..."
+  #chsh -s $(which zsh)
 ### end common-components/zsh
 
-if [[ -f /etc/zshenv ]]; then
-  fancy_echo "Fixing OSX zsh environment bug ..."
-    sudo mv /etc/{zshenv,zshrc}
-fi
+#if [[ -f /etc/zshenv ]]; then
+#  fancy_echo "Fixing OSX zsh environment bug ..."
+#    sudo mv /etc/{zshenv,zshrc}
+#fi
 ### end mac-components/zsh-fix
 
 if ! command -v brew &>/dev/null; then
   fancy_echo "Installing Homebrew, a good OS X package manager ..."
     ruby <(curl -fsS https://raw.githubusercontent.com/Homebrew/homebrew/go/install)
 
-  if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
+  if ! grep -qs "recommended by brew doctor" ~/.bash_profile; then
     fancy_echo "Put Homebrew location earlier in PATH ..."
-      printf '\n# recommended by brew doctor\n' >> ~/.zshrc
-      printf 'export PATH="/usr/local/bin:$PATH"\n' >> ~/.zshrc
+      printf '\n# recommended by brew doctor\n' >> ~/.bash_profile
+      printf 'export PATH="/usr/local/bin:$PATH"\n' >> ~/.bash_profile
       export PATH="/usr/local/bin:$PATH"
   fi
 else
@@ -98,9 +98,9 @@ fancy_echo "Starting Postgres ..."
 fancy_echo "Installing rbenv, to change Ruby versions ..."
   brew install rbenv
 
-  if ! grep -qs "rbenv init" ~/.zshrc; then
-    printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> ~/.zshrc
-    printf 'eval "$(rbenv init - --no-rehash)"\n' >> ~/.zshrc
+  if ! grep -qs "rbenv init" ~/.bash_profile; then
+    printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> ~/.bash_profile
+    printf 'eval "$(rbenv init - --no-rehash)"\n' >> ~/.bash_profile
 
     fancy_echo "Enable shims and autocompletion ..."
       eval "$(rbenv init -)"
@@ -117,7 +117,7 @@ fancy_echo "Installing ruby-build, to install Rubies ..."
 
 fancy_echo "Upgrading and linking OpenSSL ..."
   brew install openssl
-  brew link openssl --force
+  #brew link openssl --force
 ### end mac-components/compiler-and-libraries
 
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
@@ -145,8 +145,8 @@ fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
   bundle config --global jobs $((number_of_cores - 1))
 ### end mac-components/bundler
 
-fancy_echo "Installing Suspenders, thoughtbot's Rails template ..."
-  gem install suspenders --no-document
+#fancy_echo "Installing Suspenders, thoughtbot's Rails template ..."
+  #gem install suspenders --no-document
 ### end common-components/default-gems
 
 fancy_echo "Installing Heroku CLI client ..."
